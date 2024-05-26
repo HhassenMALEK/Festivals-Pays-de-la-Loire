@@ -1,131 +1,85 @@
 <!DOCTYPE HTML>
 <html lang="fr">
 <head>
+   
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
     <title>RÉGION Pays De La Loire</title>
+    <!-- Inclusion de Leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
-     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
-     crossorigin=""/>
+          integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+          crossorigin=""/>
+    <!-- Inclusion de Chart.js pour les graphiques -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- Inclusion des fichiers JavaScript -->
     <script src="scripts.js"></script>
     <script src="chart.js"></script>
-    <!-- <script src="site.js"></script> -->
+    <!-- Inclusion main.css-->
     <link rel="stylesheet" href="main.css">
+    <!-- Inclusion de la police Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,500;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <!-- Inclusion de Three.js pour la 3D -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <!-- Inclusion de la bibliothèque Leaflet -->
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
-        integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
-        crossorigin="">
-
-        </script>
-  </head>
+            integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+            crossorigin=""></script>
+</head>
 <body>
-  <section class="header">
-<nav>
-  <a href="index.html"><img src="image/logo.png"></a>
-  <div class="nav-links" id="navLinks">
-   <!--  <i class="fa fa-times" onclick="showMenu()"></i> -->
-     <ul>
-        <li><a href="">HOME</a></li>
-        <!-- <li><a href="">FESTIVALS</a></li> -->
-        <li><a href=" #ancredonut">CHART</a></li>
-        <li><a href="#ancremap">MAP</a></li>
-     </ul>
-  </div>
- <!--  <i class="fa fa-bars" onclick="hideMenu()"></i> -->
-</nav>
-<div class="text-box">
-   <h1> VIBREZ PRÈS DE CHEZ VOUS</h1>
-   <p>"Découvrez la richesse vibrante de la culture et du patrimoine au Festival Pays de la Loire,
-     où tradition et créativité se rencontrent au cœur de la pittoresque région française."</p>
-   <!-- <a href="" class="text-btn">Visitez Nous Pour En Savoire Plus</a> -->
-</div>
-  </section>
-  <!-- <section class="typesOfFestivals">
-     <h1>Types De Festivals</h1>
-     <p style="text-align: center; color:white">Voici Les six Différents Types Des Festivals </p>
-     <div class="row">
-  <h3> Festival De Musique</h3>
-  <h3> Festival De Culture</h3>
-  <h3> Festival De livre littérature</h3>
-  <h3> Festival De Cinéma Audiovisuel</h3>
-  <h3> Festival De Pluridisciplinaire</h3>
-  <h3> Festival D'Art Visuel, Art Numérique</h3>
-    </div>
-    
-    <div>
-    <dd></dd>
-</div>
-    <br>
-    <br>
-    <div style = "text-align: center; align-items: center;">
-  </section> -->
-  <section class="map">
-    <div id="ancremap"></div>
-    <h1>Festivals Pays de la Loire</h1>
-    <br>
-    <br>
-    <div id="map" leaflet.js></div>
-    
-    <br><br>
-    <a href=""><img src="img/fleche-haut-2.png"></a>
-    <br><br>
-    <br><br>
-    <br>
-    <br><br>
-    
-    <br>
-    <br>
-    <br><br>
-    <br><br>
-    <br>
-    <br>
-    <br>
-  </section>
-  <section class="donut">
-    <div id="ancredonut"></div>
-    <br>
-    <br>
-     <h1 style="text-align: center;"> TYPE DE FESTIVAL EN DÉTAIL</h1>
-     <br>
-     <br>
-    <canvas id="myDoughnutChart"></canvas>
-    <br>
-    <br>
-    <br>
-    <br>
-    <a href="" ><img src="img/fleche-haut-2.png" ></a>
-     </section>
-     <section class="blanc">
-    <ul></ul>
-    <script>
-        festivalsParCatégories()
-        createMap()
-       /*  nav() */
-        //festivalsListParCategories()
-    </script>
-    <br>
-    <br>
-   
-    <br>
-    <br>
-    
-    <br>
-    <br>
-  </section>
-    <section class="footer">
-     <h4>À PROPOS DE NOUS</h4>
-     <p>"HANOEL" => HASSEN, NORA, ELOISE, Nous sommes trois personnes dynamiques, on à fait ce project, avec plein de stress,<br>
-      de blocages sur git et malgré le mal être d'Éloïse au départ, on s'est bien marré.</p>
-     
-     <br>
-     
-      <H1>MADE IN ADA TECH SCHOOL</H1>
-      
+    <!-- Section de l'en-tête avec navigation -->
+    <section class="header">
+        <nav>
+            <!-- Logo du site -->
+            <a href="index.html"><img src="image/logo.png" alt="Logo"></a>
+            <div class="nav-links" id="navLinks">
+                <!-- Menu de navigation -->
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#ancredonut">CHART</a></li>
+                    <li><a href="#ancremap">MAP</a></li>
+                </ul>
+            </div>
+        </nav>
+        <!-- Texte principal de l'en-tête -->
+        <div class="text-box">
+            <h1>VIBREZ PRÈS DE CHEZ VOUS</h1>
+            <p>"Découvrez la richesse vibrante de la culture et du patrimoine au Festival Pays de la Loire, où tradition et créativité se rencontrent au cœur de la pittoresque région française."</p>
+        </div>
     </section>
-</div>
-   
+
+    <!-- Section de la carte -->
+    <section class="map">
+        <div id="ancremap"></div>
+        <h1>Festivals Pays de la Loire</h1>
+        <div id="map" leaflet.js></div>
+        <a href="#"><img src="img/fleche-haut-2.png" alt="Flèche haut"></a>
+    </section>
+
+    <!-- Section du graphique en donut -->
+    <section class="donut">
+        <div id="ancredonut"></div>
+        <h1 style="text-align: center;">TYPE DE FESTIVAL EN DÉTAIL</h1>
+        <canvas id="myDoughnutChart"></canvas>
+        <a href="#"><img src="img/fleche-haut-2.png" alt="Flèche haut"></a>
+    </section>
+
+    <!-- Section blanche pour scripts supplémentaires -->
+    <section class="blanc">
+        <script>
+            // Appel des fonctions pour les festivals par catégories et la carte
+            festivalsParCatégories();
+            createMap();
+        </script>
+    </section>
+
+    <!-- Section du pied de page -->
+    <section class="footer">
+        <h4>À PROPOS DE NOUS</h4>
+        <p>"HANOEL" => HASSEN, NORA, ELOISE, Nous sommes trois personnes dynamiques, on à fait ce projet, avec plein de stress, de blocages sur git et malgré le mal-être d'Éloïse au départ, on s'est bien marré.</p>
+        <h1>MADE IN ADA TECH SCHOOL</h1>
+    </section>
 </body>
 </html>
+
