@@ -211,3 +211,7 @@ function markersData(map) {
     });
 }
 
+document.addEventListener("DOMContentLoaded", function() {
+  festivalsParCatégories();
+  createMap();
+});
