@@ -19,26 +19,6 @@ function festivalsParCatégories() {
     });
 }
 
-// Fonction pour récupérer et afficher les listes de festivals par catégories
-function festivalsListParCategories() {
-  fetch("https://data.culture.gouv.fr/api/explore/v2.1/catalog/datasets/festivals-global-festivals-_-pl/exports/json")
-    .then((response) => {
-      return response.json();
-    })
-    .then((festivals) => {
-      // festivals contient 7283 objets festival
-      let festFilter = festivals.filter(isPaysdeLaLoire); // contient 332 objets festival en Pays de la Loire
-      let listbytheme = isDisciplineDominante(festFilter); // liste des festivals par types {[discipline, list],}
-      let list = [];
-      for ([key, value] of Object.entries(festFilter)) {
-        let obj = {};
-        obj[key] = value;
-        list.push(obj); // liste des disciplines avec le nombre de festivals correspondant
-      }
-      affichageLists(list);
-    });
-}
-
 // Fonction pour filtrer les festivals se déroulant en Pays de la Loire
 function isPaysdeLaLoire(festival) {
   return festival.region_principale_de_deroulement === "Pays de la Loire";
@@ -215,3 +195,6 @@ document.addEventListener("DOMContentLoaded", function() {
   festivalsParCatégories();
   createMap();
 });
+
+
+
